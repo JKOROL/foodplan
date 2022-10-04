@@ -1,24 +1,24 @@
 CREATE TABLE secretQuestion(
-   idQuestion VARCHAR(50) ,
+   idQuestion INT AUTO_INCREMENT,
    question VARCHAR(255)  NOT NULL,
    PRIMARY KEY(idQuestion)
 );
 
 CREATE TABLE ingredient(
-   idIngredient INT,
+   idIngredient INT AUTO_INCREMENT,
    label VARCHAR(50)  NOT NULL,
    PRIMARY KEY(idIngredient)
 );
 
 CREATE TABLE profil(
-   idProfil INT,
+   idProfil INT AUTO_INCREMENT,
    label VARCHAR(50)  NOT NULL,
    PRIMARY KEY(idProfil),
    UNIQUE(label)
 );
 
 CREATE TABLE rightCategory(
-   idCategory INT,
+   idCategory INT AUTO_INCREMENT,
    label VARCHAR(50) ,
    PRIMARY KEY(idCategory)
 );
@@ -33,7 +33,7 @@ CREATE TABLE userAccount(
    passhash VARCHAR(255)  NOT NULL,
    salt VARCHAR(50)  NOT NULL,
    answer VARCHAR(50)  NOT NULL,
-   idQuestion VARCHAR(50)  NOT NULL,
+   idQuestion INT  NOT NULL,
    PRIMARY KEY(idUser),
    UNIQUE(email),
    UNIQUE(username),
@@ -41,7 +41,7 @@ CREATE TABLE userAccount(
 );
 
 CREATE TABLE recipe(
-   idRecipe INT,
+   idRecipe INT AUTO_INCREMENT,
    label VARCHAR(255)  NOT NULL,
    idUser INT NOT NULL,
    PRIMARY KEY(idRecipe),
@@ -49,7 +49,7 @@ CREATE TABLE recipe(
 );
 
 CREATE TABLE comment(
-   idComment INT,
+   idComment INT AUTO_INCREMENT,
    content VARCHAR(255)  NOT NULL,
    idUser INT NOT NULL,
    idRecipe INT NOT NULL,
@@ -61,7 +61,7 @@ CREATE TABLE comment(
 );
 
 CREATE TABLE instruction(
-   idInstruction INT,
+   idInstruction INT AUTO_INCREMENT,
    content TEXT,
    idRecipe INT NOT NULL,
    PRIMARY KEY(idInstruction),
@@ -69,7 +69,7 @@ CREATE TABLE instruction(
 );
 
 CREATE TABLE rights(
-   idRight INT,
+   idRight INT AUTO_INCREMENT,
    label VARCHAR(255) ,
    idCategory INT NOT NULL,
    PRIMARY KEY(idRight),
@@ -77,7 +77,7 @@ CREATE TABLE rights(
 );
 
 CREATE TABLE planning(
-   idPlanning INT,
+   idPlanning INT AUTO_INCREMENT,
    idUser INT NOT NULL,
    PRIMARY KEY(idPlanning),
    FOREIGN KEY(idUser) REFERENCES userAccount(idUser)
