@@ -34,6 +34,7 @@ CREATE TABLE userAccount(
    salt VARCHAR(50)  NOT NULL,
    answer VARCHAR(50)  NOT NULL,
    idQuestion INT  NOT NULL,
+   avatar VARCHAR(255),
    PRIMARY KEY(idUser),
    UNIQUE(email),
    UNIQUE(username),
