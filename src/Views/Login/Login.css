@@ -1,0 +1,19 @@
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+.form>*{
+margin: 2rem;
+}
+
+.buttonContainer{
+    display: flex;
+    justify-content: space-evenly;
+}
