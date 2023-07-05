@@ -12,4 +12,3 @@ DROP TABLE userAccount;
 DROP TABLE rightCategory;
 DROP TABLE profil;
 DROP TABLE ingredient;
-DROP TABLE secretQuestion;

@@ -1,9 +1,3 @@
-CREATE TABLE secretQuestion(
-   idQuestion INT AUTO_INCREMENT,
-   question VARCHAR(255)  NOT NULL,
-   PRIMARY KEY(idQuestion)
-);
-
 CREATE TABLE ingredient(
    idIngredient INT AUTO_INCREMENT,
    label VARCHAR(50)  NOT NULL,
@@ -27,18 +21,14 @@ CREATE TABLE userAccount(
    idUser INT AUTO_INCREMENT,
    email VARCHAR(100)  NOT NULL,
    firstName VARCHAR(50) ,
-   lastName VARCHAR(50) ,
-   dateOfBirth DATE,
+   lastName VARCHAR(50),
    username VARCHAR(50)  NOT NULL,
    passhash VARCHAR(255)  NOT NULL,
    salt VARCHAR(50)  NOT NULL,
-   answer VARCHAR(50)  NOT NULL,
-   idQuestion INT  NOT NULL,
    avatar VARCHAR(255),
    PRIMARY KEY(idUser),
    UNIQUE(email),
-   UNIQUE(username),
-   FOREIGN KEY(idQuestion) REFERENCES secretQuestion(idQuestion)
+   UNIQUE(username)
 );
 
 CREATE TABLE recipe(
