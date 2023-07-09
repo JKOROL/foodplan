@@ -164,7 +164,7 @@ function ResponsiveAppBar({userProp,...props}:ResponsiveAppBarProps) {
           </Box>
             ):(
             <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Menu">
+              <Tooltip title={user.getUsername()}>
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <Avatar alt="userAvatar" src={user.getAvatar()} />
                 </IconButton>
