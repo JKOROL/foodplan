@@ -1,13 +1,20 @@
+import { User } from '../../Classes';
 import { ResponsiveAppBar } from '../../Components';
 import './Recipe.css';
 import { useNavigate } from "react-router-dom";
 
-function Recipe(){
+
+type RecipeProps= {
+    user : User,
+}
+
+
+function Recipe({user,...props}:RecipeProps){
     const navigate = useNavigate();
     return (
         <div className='ViewContainer'>
-            <ResponsiveAppBar></ResponsiveAppBar>
-            
+            <ResponsiveAppBar userProp={user}></ResponsiveAppBar>
+            <p>Recipe</p>
         </div>
     )
 }

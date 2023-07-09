@@ -189,7 +189,7 @@ function Signup(){
             if(data.status==="succes")
             {
                 toast.success(data.message);
-                setInterval(()=>navigate("/Login"),1000)
+                setInterval(()=>navigate("/Login"),5000)
             }
         })
         
@@ -198,7 +198,7 @@ function Signup(){
     return (
         <div className='ViewContainer'>
             
-            <ResponsiveAppBar></ResponsiveAppBar>
+            <ResponsiveAppBar userProp={new User()}></ResponsiveAppBar>
             <div className='main'>
             
                 <div className='form'>

@@ -21,11 +21,14 @@ import { useAuth } from '../../Utils/Hooks';
 const pages = [{name:'Calendrier',link:'/Calendar'}, {name:'Recettes',link:'/Recipe'}, {name:'Forum',link:'/Forum'}];
 const settings = [{name:'Profil',link:'/Profil'},{name:'Paramètres',link:'/Settings'},{name:'Se déconnecter',link:'/Logout'}];
 
+type ResponsiveAppBarProps = {
+  userProp:User
+}
 
-function ResponsiveAppBar() {
+function ResponsiveAppBar({userProp,...props}:ResponsiveAppBarProps) {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
-  const [user, setUser] = useState<User>(new User(-1));
+  const [user, setUser] = useState<User>(userProp);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -43,12 +46,13 @@ function ResponsiveAppBar() {
   };
 
   const navigate = useNavigate();
+  
+  useAuth();
 
   const auth = useAuth();
-
   useEffect(()=>{
-    setUser(auth())
-  },[])
+    setUser(auth());
+  })
 
   return (
     <AppBar position="static">
@@ -114,7 +118,7 @@ function ResponsiveAppBar() {
             variant="h5"
             noWrap
             component="a"
-            href=""
+            href="/"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -141,7 +145,7 @@ function ResponsiveAppBar() {
           </Box>
           
           {
-            user.isAuth()? (
+            user.getId()===-1? (
               <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' }, justifyContent: 'flex-end' }}>
                 <Button
                   key={"Login"}
@@ -150,12 +154,19 @@ function ResponsiveAppBar() {
                 >
                   {"Se connecter"}
                 </Button>
+                <Button
+                  key={"SignUp"}
+                  onClick={()=>{navigate("/Signup")}}
+                  sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                  {"S'inscrire"}
+                </Button>
           </Box>
             ):(
             <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Open settings">
+              <Tooltip title="Menu">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Banjo" src="https://pbs.twimg.com/profile_images/1267374113754136576/I-ZOlmqh_400x400.jpg" />
+                  <Avatar alt="userAvatar" src={user.getAvatar()} />
                 </IconButton>
               </Tooltip>
               <Menu

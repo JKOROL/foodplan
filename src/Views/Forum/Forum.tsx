@@ -1,13 +1,19 @@
+import { Dispatch, SetStateAction } from 'react';
+import { User } from '../../Classes';
 import { ResponsiveAppBar } from '../../Components';
 import './Forum.css';
 import { useNavigate } from "react-router-dom";
 
-function Forum(){
+type ForumProps= {
+    user : User,
+} 
+
+function Forum({user,...props}:ForumProps){
     const navigate = useNavigate();
     return (
         <div className='ViewContainer'>
-            <ResponsiveAppBar></ResponsiveAppBar>
-            
+            <ResponsiveAppBar userProp={user}></ResponsiveAppBar>
+            <p>Forum</p>
         </div>
     )
 }
