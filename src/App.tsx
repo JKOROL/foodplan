@@ -1,16 +1,15 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import { Calendar, Forum, Home, Login, Logout, Profil, Recipe, Settings, Signup } from './Views';
 import { User } from './Classes';
 import { useEffect, useState } from "react";
 import { useAuth } from "./Utils/Hooks";
+import { ToastContainer } from "react-toastify";
 
 function App(){
 
     const [user,setUser]= useState(new User());
     const [connected,setConnected] = useState(false);
 
-    
-    //setUser(useAuth());
     const auth = useAuth();
     useEffect(()=>{
         setUser(auth());
@@ -19,7 +18,7 @@ function App(){
     const router = createBrowserRouter([
         {
             path: "/",
-            element: <Home user={user}></Home>,
+            element: <Navigate to={"/Home"}></Navigate>,
         },{
             path: "Login",
             element: <Login setUser={setUser}></Login>,
@@ -43,15 +42,19 @@ function App(){
             element: <Settings user={user} setUser={setUser}></Settings>,
         },{
             path: "Profil",
-            element: <Profil user={user} setUser={setUser}></Profil>,
+            element: <Profil></Profil>,
         },{
             path: "Admin",
             element: <div></div>
-        }
+        },{
+            path: "Home",
+            element: <Home user={user}></Home>,
+        },
       ]);
 
     return (
         <div className="App">
+            <ToastContainer limit={3}></ToastContainer>
             <RouterProvider router={router} />
         </div>
     )

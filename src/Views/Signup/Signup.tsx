@@ -20,7 +20,7 @@ function Signup(){
     const [activeStep, setActiveStep] = useState(0);
 
     const regexEmail = new RegExp("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
-    const regexPassword = new RegExp("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^\\\\&*-\/]).{8,}$");
+    const regexPassword = new RegExp("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^\\\\&*-/]).{8,}$");
 
     const steps=["Identifiants","Infos optionnels"]
 
@@ -50,29 +50,15 @@ function Signup(){
             {
                 check = false;
                 toast.error("Les mots de passe ne correspondent pas !",{
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "colored",
-                    });
+                    theme:"colored"
+                });
             }
             else{
                 if(password === "" && confirmPassword==="")
                 {
                     check=false;
                     toast.error("Le mot de passe ne peut être vide !",{
-                        position: "top-right",
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "colored",
+                        theme:"colored"
                     });
                 }
                 else{
@@ -80,14 +66,7 @@ function Signup(){
                     {
                         check=false;
                         toast.error("Le mot de passe ne correspond pas aux exigences de sécurité !",{
-                            position: "top-right",
-                            autoClose: 5000,
-                            hideProgressBar: false,
-                            closeOnClick: true,
-                            pauseOnHover: true,
-                            draggable: true,
-                            progress: undefined,
-                            theme: "colored",
+                            theme:"colored"
                         });
                     }
                 }
@@ -102,15 +81,8 @@ function Signup(){
                     if(data.status!=="succes")
                     {
                         toast.error(data.message,{
-                            position: "top-right",
-                            autoClose: 5000,
-                            hideProgressBar: false,
-                            closeOnClick: true,
-                            pauseOnHover: true,
-                            draggable: true,
-                            progress: undefined,
-                            theme: "colored",
-                            });
+                            theme:"colored"
+                        });
                         check=false;
                     }
                 })
@@ -118,15 +90,8 @@ function Signup(){
             else{
                 check=false;
                 toast.error("Nom d'utilisateur non valide !",{
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "colored",
-                    });
+                    theme:"colored"
+                });
             }
             
             if(regexEmail.test(email))
@@ -138,15 +103,8 @@ function Signup(){
                 if(data.status!=="succes")
                 {
                     toast.error(data.message,{
-                        position: "top-right",
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "colored",
-                        });
+                        theme:"colored"
+                    });
                     check=false;
                 }
             })
@@ -154,15 +112,8 @@ function Signup(){
             else{
                 check=false;
                 toast.error("Adresse email invalide",{
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "colored",
-                    });
+                    theme:"colored"
+                });
             }
             
         }
@@ -188,7 +139,9 @@ function Signup(){
         }).then((data)=>{
             if(data.status==="succes")
             {
-                toast.success(data.message);
+                toast.success(data.message,{
+                    theme:"colored"
+                });
                 setInterval(()=>navigate("/Login"),5000)
             }
         })
@@ -202,7 +155,6 @@ function Signup(){
             <div className='main'>
             
                 <div className='form'>
-                <ToastContainer></ToastContainer>
                 <Stepper activeStep={activeStep}>
         {steps.map((label, index) => {
           const stepProps: { completed?: boolean } = {};

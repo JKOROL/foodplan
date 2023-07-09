@@ -48,7 +48,7 @@ function Login({setUser,...props} : LoginProps){
                     sessionStorage.setItem("token",data.token);
                     sessionStorage.setItem("user",JSON.stringify(user));
                 }
-                setInterval(()=>navigate("/",{ replace: true }),5000);
+                setInterval(()=>navigate("/Home",{ replace: true }),5000);
             }
             else{
                 toast.error(data.message,{
@@ -73,7 +73,6 @@ function Login({setUser,...props} : LoginProps){
         <div className='ViewContainer'>
             <ResponsiveAppBar userProp={new User()}></ResponsiveAppBar>
             <div className='main'>
-                <ToastContainer></ToastContainer>
                 <div className='form'>
                     <TextField id="email-input" label="Email" variant="outlined" value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
                     <FormControl variant="outlined">
