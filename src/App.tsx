@@ -4,6 +4,7 @@ import { User } from './Classes';
 import { useEffect, useState } from "react";
 import { useAuth } from "./Utils/Hooks";
 import { ToastContainer } from "react-toastify";
+import { ResponsiveAppBar } from "./Components";
 
 function App(){
 
@@ -61,6 +62,7 @@ function App(){
     return (
         <div className="App">
             <ToastContainer limit={3}></ToastContainer>
+            <ResponsiveAppBar></ResponsiveAppBar>
             <RouterProvider router={router} />
         </div>
     )

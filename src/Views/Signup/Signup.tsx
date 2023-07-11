@@ -142,7 +142,7 @@ function Signup(){
                 toast.success(data.message,{
                     theme:"colored"
                 });
-                setInterval(()=>navigate("/Login"),5000)
+                setInterval(()=>{window.location.href="/Login"},5000)
             }
         })
         
@@ -150,10 +150,7 @@ function Signup(){
 
     return (
         <div className='ViewContainer'>
-            
-            <ResponsiveAppBar userProp={new User()}></ResponsiveAppBar>
             <div className='main'>
-            
                 <div className='form'>
                 <Stepper activeStep={activeStep}>
         {steps.map((label, index) => {

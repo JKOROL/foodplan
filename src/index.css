@@ -1,8 +1,12 @@
 body{
     margin: 0;
+    
+}
+.App{
+    height: 100vh;
 }
 .ViewContainer{
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
 }

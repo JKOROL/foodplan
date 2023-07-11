@@ -9,12 +9,8 @@ type HomeProps= {
 
 function Home({user,...props}:HomeProps){
     const navigate = useNavigate();
-    console.log(user.getId());
-    console.log(user.isAuth());
-    console.log(user);
     return (
         <div className='ViewContainer'>
-            <ResponsiveAppBar userProp={user}></ResponsiveAppBar>
             <p>Home</p>
         </div>
     )
