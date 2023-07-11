@@ -11,7 +11,6 @@ function Calendar({user,...props}:CalendarProps){
     const navigate = useNavigate();
     return (
         <div className='ViewContainer'>
-            <ResponsiveAppBar userProp={user}></ResponsiveAppBar>
             <p>Calendar</p>
         </div>
     )

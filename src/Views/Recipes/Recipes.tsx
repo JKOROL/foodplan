@@ -4,12 +4,9 @@ import './Recipe.css';
 import { useNavigate } from "react-router-dom";
 
 
-type RecipeProps= {
-    user : User,
-}
 
 
-function Recipe({user,...props}:RecipeProps){
+function Recipes(){
     const navigate = useNavigate();
     return (
         <div className='ViewContainer'>
@@ -18,4 +15,4 @@ function Recipe({user,...props}:RecipeProps){
     )
 }
 
-export default Recipe
+export default Recipes

@@ -130,8 +130,6 @@ function Profil(){
     
     return (
         <div className='ViewContainer'>
-            
-            <ResponsiveAppBar userProp={user}></ResponsiveAppBar>
             <div className='main'>
                 <Avatar alt="userAvatar" src={avatar} sx={{ width: "10rem", height: "10rem" }}></Avatar>
                 <div className='form'>

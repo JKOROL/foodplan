@@ -12,7 +12,6 @@ function Forum({user,...props}:ForumProps){
     const navigate = useNavigate();
     return (
         <div className='ViewContainer'>
-            <ResponsiveAppBar userProp={user}></ResponsiveAppBar>
             <p>Forum</p>
         </div>
     )

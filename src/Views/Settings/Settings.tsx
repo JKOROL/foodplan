@@ -15,7 +15,6 @@ function Settings({user,setUser,...props}:SettingsProps){
     const navigate = useNavigate();
     return (
         <div className='ViewContainer'>
-            <ResponsiveAppBar userProp={user}></ResponsiveAppBar>
             <p>Settings</p>
         </div>
     )
