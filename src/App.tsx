@@ -49,7 +49,13 @@ function App(){
         },{
             path: "Home",
             element: <Home user={user}></Home>,
-        },
+        },{
+            path: "Recipe/create",
+            element : <div>création de recette</div>
+        },{
+            path:"Recipe/:id",
+            element : <div>recette 1</div>
+        }
       ]);
 
     return (
