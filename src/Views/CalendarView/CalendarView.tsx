@@ -3,11 +3,7 @@ import { ResponsiveAppBar } from '../../Components';
 import './Calendar.css';
 import { useNavigate } from "react-router-dom";
 
-type CalendarProps= {
-    user : User,
-}
-
-function Calendar({user,...props}:CalendarProps){
+function CalendarView(){
     const navigate = useNavigate();
     return (
         <div className='ViewContainer'>
@@ -16,4 +12,4 @@ function Calendar({user,...props}:CalendarProps){
     )
 }
 
-export default Calendar
+export default CalendarView

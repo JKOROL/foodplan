@@ -1,10 +1,10 @@
 class User{
-    private idUser!: number;
-    private email!: string;
-    private firstName!: string;
-    private lastName!: string;
-    private username!: string;
-    private avatar!: string;
+    private idUser: number;
+    private email: string;
+    private firstName: string;
+    private lastName: string;
+    private username: string;
+    private avatar: string;
 
     constructor(idUser:number = -1,email:string ="",firstName:string="",lastName:string="",username:string="",avatar:string="")
     {

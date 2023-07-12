@@ -8,7 +8,7 @@ import { User } from '../../Classes';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
-function Signup(){
+function SignupView(){
     const navigate = useNavigate();
     const [email, setEmail] = useState<string>("");
     const [username, setUsername] = useState<string>("");
@@ -245,4 +245,4 @@ function Signup(){
     )
 }
 
-export default Signup
+export default SignupView

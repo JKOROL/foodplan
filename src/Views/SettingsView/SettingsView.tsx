@@ -4,14 +4,7 @@ import { ResponsiveAppBar } from '../../Components';
 import './Settings.css';
 import { useNavigate } from "react-router-dom";
 
-
-type SettingsProps= {
-    user : User,
-    setUser: Dispatch<SetStateAction<User>>
-} 
-
-
-function Settings({user,setUser,...props}:SettingsProps){
+function SettingsView(){
     const navigate = useNavigate();
     return (
         <div className='ViewContainer'>
@@ -20,4 +13,4 @@ function Settings({user,setUser,...props}:SettingsProps){
     )
 }
 
-export default Settings
+export default SettingsView

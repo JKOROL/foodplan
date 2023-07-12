@@ -12,7 +12,7 @@ import { useAuth } from '../../Utils/Hooks';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 
-function Profil(){
+function ProfilView(){
 
     const auth = useAuth();
 
@@ -228,4 +228,4 @@ function Profil(){
     )
 }
 
-export default Profil
+export default ProfilView

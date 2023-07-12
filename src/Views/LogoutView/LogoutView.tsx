@@ -3,11 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { User } from "../../Classes";
 
 type LogoutProps= {
-    user : User,
     setUser: Dispatch<SetStateAction<User>>
 } 
 
-function Logout({user,setUser,...props}:LogoutProps){
+function LogoutView({setUser,...props}:LogoutProps){
 
     const navigate = useNavigate();
 
@@ -21,4 +20,4 @@ function Logout({user,setUser,...props}:LogoutProps){
         <div></div>
     )
 }
-export default Logout
+export default LogoutView

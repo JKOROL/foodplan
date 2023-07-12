@@ -1,5 +1,5 @@
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
-import { Calendar, Forum, Home, Login, Logout, Profil, Recipe, Settings, Signup } from './Views';
+import { CalendarView, ForumView, HomeView, LoginView, LogoutView, ProfilView, RecipeView, RecipesView, SettingsView, SignupView } from './Views';
 import { User } from './Classes';
 import { useEffect, useState } from "react";
 import { useAuth } from "./Utils/Hooks";
@@ -22,40 +22,37 @@ function App(){
             element: <Navigate to={"/Home"}></Navigate>,
         },{
             path: "Login",
-            element: <Login setUser={setUser}></Login>,
+            element: <LoginView setUser={setUser}></LoginView>,
         },{
             path: "Signup",
-            element: <Signup></Signup>,
+            element: <SignupView></SignupView>,
         },{
             path: "Calendar",
-            element: <Calendar user={user}></Calendar>,
+            element: <CalendarView></CalendarView>,
         },{
-            path: "Recipe",
-            element: <Recipe user={user}></Recipe>,
+            path: "Recipes",
+            element: <RecipesView></RecipesView>,
         },{
             path: "Forum",
-            element: <Forum user={user}></Forum>,
+            element: <ForumView></ForumView>,
         },{
             path: "Logout",
-            element: <Logout user={user} setUser={setUser}></Logout>,
+            element: <LogoutView setUser={setUser}></LogoutView>,
         },{
             path: "Settings",
-            element: <Settings user={user} setUser={setUser}></Settings>,
+            element: <SettingsView></SettingsView>,
         },{
             path: "Profil",
-            element: <Profil></Profil>,
+            element: <ProfilView></ProfilView>,
         },{
             path: "Admin",
             element: <div></div>
         },{
             path: "Home",
-            element: <Home user={user}></Home>,
-        },{
-            path: "Recipe/create",
-            element : <div>création de recette</div>
+            element: <HomeView></HomeView>,
         },{
             path:"Recipe/:id",
-            element : <div>recette 1</div>
+            element : <RecipeView></RecipeView>
         }
       ]);
 

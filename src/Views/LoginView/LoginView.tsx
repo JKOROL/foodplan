@@ -12,7 +12,7 @@ type LoginProps = {
     setUser : Dispatch<SetStateAction<User>>
 }
 
-function Login({setUser,...props} : LoginProps){
+function LoginView({setUser,...props} : LoginProps){
     const navigate = useNavigate();
     const [email, setEmail] = useState<string>("")
     const [password , setPassword] = useState<string>("");
@@ -102,4 +102,4 @@ function Login({setUser,...props} : LoginProps){
     )
 }
 
-export default Login
+export default LoginView

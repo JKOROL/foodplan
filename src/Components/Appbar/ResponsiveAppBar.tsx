@@ -17,7 +17,7 @@ import { useEffect, useState } from 'react';
 import { User } from '../../Classes';
 import { useAuth } from '../../Utils/Hooks';
 
-const pages = [{name:'Calendrier',link:'/Calendar'}, {name:'Recettes',link:'/Recipe'}, {name:'Forum',link:'/Forum'}];
+const pages = [{name:'Calendrier',link:'/Calendar'}, {name:'Recettes',link:'/Recipes'}, {name:'Forum',link:'/Forum'}];
 const settings = [{name:'Profil',link:'/Profil'},{name:'Paramètres',link:'/Settings'},{name:'Se déconnecter',link:'/Logout'}];
 
 function ResponsiveAppBar() {
@@ -45,7 +45,7 @@ function ResponsiveAppBar() {
   const auth = useAuth();
   useEffect(()=>{
     setUser(auth());
-  })
+  },[1])
 
   return (
     <AppBar position="static">
