@@ -1,13 +1,14 @@
 import Instruction from "./Instruction";
+import RecipeIngredient from "./RecipeIngredient";
 
 class Recipe{
     private idUser:number;
     private idRecipe : number;
     private label : string;
     private instructions : Array<Instruction>;
-    private ingredients : Array<string>;
+    private ingredients : Array<RecipeIngredient>;
 
-    constructor(idUser = -1,idRecipe = -1,label = "",instructions = new Array<Instruction>(),ingredients = new Array<string>() ) {
+    constructor(idUser = -1,idRecipe = -1,label = "",instructions = new Array<Instruction>(),ingredients = new Array<RecipeIngredient>() ) {
         this.idRecipe=idRecipe;
         this.idUser=idUser;
         this.label=label;
@@ -51,7 +52,7 @@ class Recipe{
         this.instructions=instructions;
     }
 
-    public setIngredients(ingredients : Array<string>){
+    public setIngredients(ingredients : Array<RecipeIngredient>){
         this.ingredients=ingredients;
     }
 }

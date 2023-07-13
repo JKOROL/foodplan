@@ -77,6 +77,8 @@ CREATE TABLE planning(
 CREATE TABLE have(
    idRecipe INT,
    idIngredient INT,
+   quantity INT,
+   unit VARCHAR(50),
    PRIMARY KEY(idRecipe, idIngredient),
    FOREIGN KEY(idRecipe) REFERENCES recipe(idRecipe),
    FOREIGN KEY(idIngredient) REFERENCES ingredient(idIngredient)
