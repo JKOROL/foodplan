@@ -3,7 +3,7 @@ import { Instruction, Recipe, User } from '../../Classes';
 import { ResponsiveAppBar } from '../../Components';
 import './Recipe.css';
 import { Navigate, useNavigate, useParams } from "react-router-dom";
-import { Button, TextField } from '@mui/material';
+import { Button, Card, TextField, Typography } from '@mui/material';
 
 function RecipeView(){
     const navigate = useNavigate();
@@ -18,14 +18,24 @@ function RecipeView(){
             {edit?(
                 <div className='formContainer'>
                     <TextField fullWidth id="label-input" label="Titre" variant="outlined" value={label} onChange={(e)=>{setLabel(e.target.value)}}/>
-                    {instructions.map((i,key)=>{
-                        return (
-                            <>
-                                <TextField fullWidth id="instruction-input" label={"Instruction n°"+(key+1)} variant="outlined" value={i.getContent()} onChange={(e)=>{i.setContent(e.target.value)}}/>
-                            </>
-                        )
-                    })}
-                    <Button onClick={()=>{instructions.push(new Instruction())}}>Ajouter une instruction</Button>
+                    <Card>
+                        <Typography textAlign="center">Ingredients</Typography>
+                        {instructions.map((i,key)=>{
+                            return (
+                                <TextField fullWidth id="instruction-input" label={"Instruction n°"+(key+1)} variant="outlined" value={i.getContent()} onChange={(e)=>{i.setContent(e.target.value)}} margin="normal"/>
+                            )
+                        })}
+                        <Button onClick={()=>{instructions.push(new Instruction())}}>Ajouter une instruction</Button>
+                    </Card>
+                    <Card>
+                        <Typography textAlign="center">Instructions</Typography>
+                        {instructions.map((i,key)=>{
+                            return (
+                                <TextField fullWidth id="instruction-input" label={"Instruction n°"+(key+1)} variant="outlined" value={i.getContent()} onChange={(e)=>{i.setContent(e.target.value)}} margin="normal"/>
+                            )
+                        })}
+                        <Button onClick={()=>{instructions.push(new Instruction())}}>Ajouter une instruction</Button>
+                    </Card>
                 </div>
             ):(
                 <div>

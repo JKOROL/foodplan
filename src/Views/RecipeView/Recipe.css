@@ -1,0 +1,7 @@
+.formContainer{
+    margin: 10rem;
+}
+
+.formContainer>*{
+    margin: 2rem 0;
+}
