@@ -5,3 +5,17 @@
 .formContainer>*{
     margin: 2rem 0;
 }
+
+.ingredientInput{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0.5rem 0;
+}
+
+.QuantityInput,.UnitSelect{
+    flex : 1;
+}
+
+.IngredientSelect{
+    flex: 2;
+}
